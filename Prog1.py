@@ -33,24 +33,25 @@ class Rectangle:
 
 
 def euclidean(a, b):
-    gcd = -999
     if a == 0:
         gcd = b
+        return gcd
     elif b == 0:
         gcd = a
+        return gcd
     if a > b:
         rem = a % b
-        euclidean(a, rem)
+        return euclidean(a, rem)
     elif b > a:
         rem = b % a
-        euclidean(b, rem)
-    return gcd
+        return euclidean(b, rem)
 
 def main():
     r1 = Rectangle(4, 40)
     r2 = Rectangle(3.5, 35.9)
     print("Rectangle 1: \nWidth: " + str(r1.width) + "\nHeight: " + str(r1.height) + "Perimeter: " + str(r1.getPerimeter()) + "\nArea: " + str(r1.getArea()))
     print("Rectangle 2: \nWidth: " + str(r2.width) + "\nHeight: " + str(r2.height) + "Perimeter: " + str(r2.getPerimeter()) + "\nArea: " + str(r2.getArea()))
-
+    print("EUCLIDEAN ALGO FOR 120 & 36")
+    print(euclidean(120, 36))
 
 main()
