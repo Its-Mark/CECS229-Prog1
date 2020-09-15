@@ -18,8 +18,8 @@
 
 class Rectangle:
     def __init__(self):
-        self.width = 1
-        self.height = 1
+        self.width = 1.0
+        self.height = 1.0
 
     def __init__(self, width, height):
         self.width = width
@@ -33,24 +33,39 @@ class Rectangle:
 
 
 def euclidean(a, b):
+    print("A: " + str(a) + ", B: " + str(b))
     if a == 0:
         return b
     elif b == 0:
         return a
-    if a > b:
-        rem = a % b
-        return euclidean(rem, a)
+    elif a > b:
+        return euclidean(a % b, b)
     elif b > a:
-        rem = b % a
-        return euclidean(rem, b)
+        return euclidean(b % a, a)
+
+
+def binToDec(bins):
+    binSplit = list(bins)
+    decimal = 0
+    for i in range(len(binSplit)):
+        decimal += int(binSplit[i]) * 2**(i+1)
+    return decimal
+
 
 def main():
     r1 = Rectangle(4, 40)
     r2 = Rectangle(3.5, 35.9)
-    print("Rectangle 1: \nWidth: " + str(r1.width) + "\nHeight: " + str(r1.height) + "Perimeter: " + str(r1.getPerimeter()) + "\nArea: " + str(r1.getArea()))
-    print("Rectangle 2: \nWidth: " + str(r2.width) + "\nHeight: " + str(r2.height) + "Perimeter: " + str(r2.getPerimeter()) + "\nArea: " + str(r2.getArea()))
-    print("EUCLIDEAN ALGO FOR 10 & 15")
-    print(euclidean(10, 15))
-    
+    print("Rectangle 1: \nWidth: " + str(r1.width) + "\nHeight: " + str(r1.height) + "Perimeter: " + str(
+        r1.getPerimeter()) + "\nArea: " + str(r1.getArea()))
+    print("Rectangle 2: \nWidth: " + str(r2.width) + "\nHeight: " + str(r2.height) + "Perimeter: " + str(
+        r2.getPerimeter()) + "\nArea: " + str(r2.getArea()))
+    a = 10
+    b = 15
+    print("EUCLIDEAN ALGO FOR " + str(a) + " & " + str(b))
+    print(euclidean(a, b))
+    c = "1001010010"
+    print("Decimal representation of: " + str(c))
+    print(binToDec(c))
+
 
 main()
