@@ -59,8 +59,8 @@ def main():
         r1.getPerimeter()) + "\nArea: " + str(r1.getArea()))
     print("Rectangle 2: \nWidth: " + str(r2.width) + "\nHeight: " + str(r2.height) + "Perimeter: " + str(
         r2.getPerimeter()) + "\nArea: " + str(r2.getArea()))
-    a = 10
-    b = 15
+    a = 17
+    b = 10
     print("EUCLIDEAN ALGO FOR " + str(a) + " & " + str(b))
     print(euclidean(a, b))
     c = "1001010010"
