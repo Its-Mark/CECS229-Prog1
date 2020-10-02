@@ -67,5 +67,6 @@ def main():
     print("Decimal representation of: " + str(c))
     print(binToDec(c))
 
+    exit = input("Press any key to exit")
 
 main()
