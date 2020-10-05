@@ -33,7 +33,7 @@ class Rectangle:
 
 
 def euclidean(a, b):
-    print("A: " + str(a) + ", B: " + str(b))
+    print("A: " + str(a) + ", B: " + str(b) + ", R: " + str(a % b))
     if a == 0:
         return b
     elif b == 0:
